@@ -14,6 +14,7 @@
 		ED7D4D50298167A300A30272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7D4D4E298167A300A30272 /* LaunchScreen.storyboard */; };
 		ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */; };
 		ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */; };
+		ED7D4D65298179B300A30272 /* StyleAndLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D64298179B300A30272 /* StyleAndLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ED7D4D51298167A300A30272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForGradient.swift; sourceTree = "<group>"; };
 		ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		ED7D4D64298179B300A30272 /* StyleAndLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleAndLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,12 @@
 		ED7D4D42298167A200A30272 /* TodoAppIOS */ = {
 			isa = PBXGroup;
 			children = (
+				ED7D4D632981733D00A30272 /* View */,
+				ED7D4D622981733800A30272 /* ViewModel */,
+				ED7D4D612981732D00A30272 /* Model */,
 				ED7D4D5B298168EA00A30272 /* Controllers */,
 				ED7D4D59298168D100A30272 /* Ultis */,
 				ED7D4D58298167B400A30272 /* Files */,
-				ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */,
 			);
 			path = TodoAppIOS;
 			sourceTree = "<group>";
@@ -92,6 +96,29 @@
 				ED7D4D47298167A200A30272 /* LoginViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED7D4D612981732D00A30272 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED7D4D622981733800A30272 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED7D4D64298179B300A30272 /* StyleAndLayout.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED7D4D632981733D00A30272 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +194,7 @@
 				ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */,
 				ED7D4D44298167A200A30272 /* AppDelegate.swift in Sources */,
 				ED7D4D46298167A200A30272 /* SceneDelegate.swift in Sources */,
+				ED7D4D65298179B300A30272 /* StyleAndLayout.swift in Sources */,
 				ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */,
 				ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */,
 			);
@@ -312,8 +340,7 @@
 				INFOPLIST_FILE = TodoAppIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,8 +366,7 @@
 				INFOPLIST_FILE = TodoAppIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
