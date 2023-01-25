@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func backgroundGradiendColor() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemMint.cgColor]
@@ -15,5 +16,16 @@ extension UIViewController {
         gradient.frame = view.bounds
         view.layer.addSublayer(gradient)
     }
+    func labelGradientColor() {
+        
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
+        gradient.locations = [0,1]
+        gradient.frame = LoginViewController.label.bounds
+        LoginViewController.label.layer.addSublayer(gradient)
+        
+        
+    }
+    
     
 }

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
      style()
      layout()
+
         
     }
 

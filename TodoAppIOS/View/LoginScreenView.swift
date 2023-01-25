@@ -32,8 +32,12 @@ extension UIViewController {
         imageView.tintColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageView)
-        containerView.addSubview(emailTextField)
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(emailTextField)
+        let dividerView = UIView()
+        dividerView.backgroundColor = .white
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(dividerView)
         
         NSLayoutConstraint.activate([
             //MARK: - Email Logo Constraint
@@ -48,7 +52,14 @@ extension UIViewController {
             emailTextField.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15),
             emailTextField.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             emailTextField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
-            emailTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            emailTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            
+            dividerView.topAnchor.constraint(equalTo: containerView.bottomAnchor,constant: 3),
+            dividerView.heightAnchor.constraint(equalToConstant: 0.7),
+            dividerView.widthAnchor.constraint(equalToConstant: 370),
+            dividerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+            
+             
         ])
         
         return containerView
@@ -75,6 +86,10 @@ extension UIViewController {
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageView)
         containerView.addSubview(passwordTextField)
+        let dividerView = UIView()
+        dividerView.backgroundColor = .white
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(dividerView)
         
         NSLayoutConstraint.activate([
         
@@ -89,7 +104,13 @@ extension UIViewController {
             passwordTextField.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15),
             passwordTextField.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             passwordTextField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
-            passwordTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            passwordTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            
+            
+            dividerView.topAnchor.constraint(equalTo: containerView.bottomAnchor),
+            dividerView.heightAnchor.constraint(equalToConstant: 0.7),
+            dividerView.widthAnchor.constraint(equalToConstant: 370),
+            dividerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
             
         ])
      
@@ -112,11 +133,15 @@ extension UIViewController {
     static let signUpButton : UIButton = {
         
         let button = UIButton(type: .system)
-        button.setTitle("Sign Up", for: UIControl.State.normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        button.layer.cornerRadius = 7
+        let attributedTitle = NSMutableAttributedString(string: "Click To Become Member", attributes: [.foregroundColor : UIColor.white, .font : UIFont.boldSystemFont(ofSize: 14)])
+        button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
+        button.backgroundColor = .clear
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+     //   button.setTitleColor(.white, for: .normal)
+    //  button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+    //  button.layer.cornerRadius = 7
+        
 
     
         return button
@@ -128,13 +153,23 @@ extension UIViewController {
        let button = UIButton(type: .system)
        button.setTitle("Log In", for: UIControl.State.normal)
        button.setTitleColor(.white, for: .normal)
-       button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+       button.backgroundColor = #colorLiteral(red: 0.3037188338, green: 0.8862745166, blue: 0.7396715448, alpha: 1)
        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
        button.layer.cornerRadius = 7
        return button
     }()
     
-    
+    static var label : UILabel = {
+        
+        let label = UILabel()
+        label.text = "Doey"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.largeTitle, compatibleWith: UITraitCollection?.none)
+      
+        
+        return label
+    }()
 }
 
 
