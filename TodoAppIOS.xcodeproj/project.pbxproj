@@ -12,7 +12,8 @@
 		ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D47298167A200A30272 /* LoginViewController.swift */; };
 		ED7D4D4D298167A300A30272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7D4D4C298167A300A30272 /* Assets.xcassets */; };
 		ED7D4D50298167A300A30272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7D4D4E298167A300A30272 /* LaunchScreen.storyboard */; };
-		ED7D4D5D2981690400A30272 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5C2981690400A30272 /* Extension.swift */; };
+		ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */; };
+		ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		ED7D4D4C298167A300A30272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7D4D4F298167A300A30272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7D4D51298167A300A30272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED7D4D5C2981690400A30272 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForGradient.swift; sourceTree = "<group>"; };
+		ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				ED7D4D5B298168EA00A30272 /* Controllers */,
 				ED7D4D59298168D100A30272 /* Ultis */,
 				ED7D4D58298167B400A30272 /* Files */,
+				ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */,
 			);
 			path = TodoAppIOS;
 			sourceTree = "<group>";
@@ -78,7 +81,7 @@
 		ED7D4D59298168D100A30272 /* Ultis */ = {
 			isa = PBXGroup;
 			children = (
-				ED7D4D5C2981690400A30272 /* Extension.swift */,
+				ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */,
 			);
 			path = Ultis;
 			sourceTree = "<group>";
@@ -164,7 +167,8 @@
 				ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */,
 				ED7D4D44298167A200A30272 /* AppDelegate.swift in Sources */,
 				ED7D4D46298167A200A30272 /* SceneDelegate.swift in Sources */,
-				ED7D4D5D2981690400A30272 /* Extension.swift in Sources */,
+				ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */,
+				ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
