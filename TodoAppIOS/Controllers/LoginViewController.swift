@@ -51,6 +51,8 @@ extension LoginViewController {
             LoginViewController.emailContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             LoginViewController.emailContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
             LoginViewController.emailContainerView.heightAnchor.constraint(equalToConstant: 60)
+            
+            //MARK: - EmailText Field
         ])
    
     }
