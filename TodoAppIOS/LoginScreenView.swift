@@ -19,6 +19,10 @@ extension UIViewController {
         
     }()
     
- 
+    static let emailContainerView : UIView = {
+        let containerView = UIView()
+        containerView.backgroundColor = .red
+        return containerView
+    }()
 }
 
