@@ -55,7 +55,7 @@ extension UIViewController {
             emailTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             
             dividerView.topAnchor.constraint(equalTo: containerView.bottomAnchor,constant: 3),
-            dividerView.heightAnchor.constraint(equalToConstant: 0.7),
+            dividerView.heightAnchor.constraint(equalToConstant:0.7 ),
             dividerView.widthAnchor.constraint(equalToConstant: 370),
             dividerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
             
@@ -133,11 +133,14 @@ extension UIViewController {
     static let signUpButton : UIButton = {
         
         let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "Click To Become Member", attributes: [.foregroundColor : UIColor.white, .font : UIFont.boldSystemFont(ofSize: 14)])
-        button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
+      //  let attributedTitle = NSMutableAttributedString(string: "Click To Become Member", attributes: [.foregroundColor : UIColor.white, .font : UIFont.boldSystemFont(ofSize: 14)])
+       // button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
+        button.setTitle("Click To Become Member", for: UIControl.State.normal)
+       button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .clear
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.textAlignment = .center
+        button.isEnabled = true
      //   button.setTitleColor(.white, for: .normal)
     //  button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
     //  button.layer.cornerRadius = 7
@@ -153,9 +156,10 @@ extension UIViewController {
        let button = UIButton(type: .system)
        button.setTitle("Log In", for: UIControl.State.normal)
        button.setTitleColor(.white, for: .normal)
-       button.backgroundColor = #colorLiteral(red: 0.3037188338, green: 0.8862745166, blue: 0.7396715448, alpha: 1)
+       button.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
        button.layer.cornerRadius = 7
+       button.isEnabled = false
        return button
     }()
     

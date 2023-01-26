@@ -11,7 +11,7 @@ extension UIViewController {
     
     func backgroundGradiendColor() {
         let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemMint.cgColor]
+        gradient.colors = [UIColor.systemRed.cgColor, UIColor.systemMint.cgColor]
         gradient.locations = [0,1]  // yukarıdan aşağıya.
         gradient.frame = view.bounds
         view.layer.addSublayer(gradient)

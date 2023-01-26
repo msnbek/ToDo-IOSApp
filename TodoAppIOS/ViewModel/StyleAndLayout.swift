@@ -6,11 +6,53 @@
 //
 
 import UIKit
+//MARK: - Selector
+extension LoginViewController {
+    static var loginButtonViewModel = LoginButtonViewModel()
+    static var becomeAmemberButtonViewModel = BecomeMemberButtonViewModel()
+    @objc func handleTextField(_ sender: UITextField) {
+        if sender == LoginViewController.emailTextField {
+            LoginViewController.loginButtonViewModel.emailText = sender.text
+            LoginViewController.becomeAmemberButtonViewModel.emailText = sender.text
+        }else {
+            LoginViewController.loginButtonViewModel.passwordText = sender.text
+            LoginViewController.becomeAmemberButtonViewModel.passwordText = sender.text
+        }
+        loginButtonStatus()
+        becomeMemberStatus()
+    }
+}
 
 
 extension LoginViewController {
+    private func loginButtonStatus() {
+        if LoginViewController.loginButtonViewModel.status {
+            LoginViewController.loginButton.isEnabled = true
+            LoginViewController.loginButton.backgroundColor = .systemBlue
+            LoginViewController.signUpButton.isEnabled = false
+           LoginViewController.signUpButton.setTitleColor(UIColor.red, for: UIControl.State.normal)
+    
+        }else {
+            LoginViewController.loginButton.isEnabled = false
+            LoginViewController.loginButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+            LoginViewController.signUpButton.isEnabled = true
+            LoginViewController.signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+           
+        }
+    }
+    
+    private func becomeMemberStatus() {
+        
+        if LoginViewController.becomeAmemberButtonViewModel.status {
+           
+        }else {
+            
+        }
+        
+    }
+    
     func style() {
-     
+    
        backgroundGradiendColor()
        
        LoginViewController.logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +62,8 @@ extension LoginViewController {
         LoginViewController.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.label.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.logoImageView.layer.cornerRadius = 150 / 2 // radius kodu.
+        LoginViewController.emailTextField.addTarget(self, action: #selector(handleTextField), for: UIControl.Event.editingChanged)
+        LoginViewController.passwordTextField.addTarget(self, action: #selector(handleTextField), for: UIControl.Event.editingChanged)
 
    }
     func layout() {
