@@ -9,20 +9,20 @@ import UIKit
 
 extension UIViewController {
     
-    func backgroundGradiendColor() {
+    func loginBackgroundGradiendColor() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemRed.cgColor, UIColor.systemMint.cgColor]
         gradient.locations = [0,1]  // yukarıdan aşağıya.
         gradient.frame = view.bounds
         view.layer.addSublayer(gradient)
     }
-    func labelGradientColor() {
+    func registerGradientBackgroundColor() {
         
         let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
+        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.white.cgColor]
         gradient.locations = [0,1]
-        gradient.frame = LoginViewController.label.bounds
-        LoginViewController.label.layer.addSublayer(gradient)
+        gradient.frame = view.bounds
+        view.layer.addSublayer(gradient)
         
         
     }

@@ -10,6 +10,8 @@ import UIKit
 extension LoginViewController {
     static var loginButtonViewModel = LoginButtonViewModel()
     static var becomeAmemberButtonViewModel = BecomeMemberButtonViewModel()
+    
+    //MARK: - TextField Editing Func
     @objc func handleTextField(_ sender: UITextField) {
         if sender == LoginViewController.emailTextField {
             LoginViewController.loginButtonViewModel.emailText = sender.text
@@ -19,10 +21,18 @@ extension LoginViewController {
             LoginViewController.becomeAmemberButtonViewModel.passwordText = sender.text
         }
         loginButtonStatus()
-        becomeMemberStatus()
+        
+    }
+    
+    //MARK: - SingUp Button Clicked Func
+    @objc func signUpButtonClicked() {
+        
+        segueWithHorizontal(viewController: SignUpStyleLayout())
+        
     }
 }
 
+//MARK: - Login and SignUp Button Changes Function.
 
 extension LoginViewController {
     private func loginButtonStatus() {
@@ -30,7 +40,7 @@ extension LoginViewController {
             LoginViewController.loginButton.isEnabled = true
             LoginViewController.loginButton.backgroundColor = .systemBlue
             LoginViewController.signUpButton.isEnabled = false
-           LoginViewController.signUpButton.setTitleColor(UIColor.red, for: UIControl.State.normal)
+            LoginViewController.signUpButton.setTitleColor(UIColor(cgColor: CGColor.init(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)), for: UIControl.State.normal)
     
         }else {
             LoginViewController.loginButton.isEnabled = false
@@ -41,33 +51,25 @@ extension LoginViewController {
         }
     }
     
-    private func becomeMemberStatus() {
-        
-        if LoginViewController.becomeAmemberButtonViewModel.status {
-           
-        }else {
-            
-        }
-        
-    }
-    
+ 
     func style() {
     
-       backgroundGradiendColor()
+       loginBackgroundGradiendColor()
        
-       LoginViewController.logoImageView.translatesAutoresizingMaskIntoConstraints = false
+       LoginViewController.logoImageViewLoginScreen.translatesAutoresizingMaskIntoConstraints = false
        LoginViewController.emailContainerView.translatesAutoresizingMaskIntoConstraints = false
        LoginViewController.passwordContainerView.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.loginButton.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.label.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.logoImageView.layer.cornerRadius = 150 / 2 // radius kodu.
+        LoginViewController.logoImageViewLoginScreen.layer.cornerRadius = 150 / 2 // radius kodu.
         LoginViewController.emailTextField.addTarget(self, action: #selector(handleTextField), for: UIControl.Event.editingChanged)
         LoginViewController.passwordTextField.addTarget(self, action: #selector(handleTextField), for: UIControl.Event.editingChanged)
+        LoginViewController.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: UIControl.Event.touchUpInside)
 
    }
     func layout() {
-        view.addSubview(LoginViewController.logoImageView)
+        view.addSubview(LoginViewController.logoImageViewLoginScreen)
         view.addSubview(LoginViewController.emailContainerView)
         view.addSubview(LoginViewController.passwordContainerView)
         view.addSubview(LoginViewController.loginButton)
@@ -79,14 +81,14 @@ extension LoginViewController {
             
             //MARK: - LogoImageView Constrant
             
-            LoginViewController.logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            LoginViewController.logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            LoginViewController.logoImageView.widthAnchor.constraint(equalToConstant: 150),
-            LoginViewController.logoImageView.heightAnchor.constraint(equalToConstant: 150),
+            LoginViewController.logoImageViewLoginScreen.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            LoginViewController.logoImageViewLoginScreen.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            LoginViewController.logoImageViewLoginScreen.widthAnchor.constraint(equalToConstant: 150),
+            LoginViewController.logoImageViewLoginScreen.heightAnchor.constraint(equalToConstant: 150),
             
             //MARK: - EmailContainer Constrant
             
-            LoginViewController.emailContainerView.topAnchor.constraint(equalTo: LoginViewController.logoImageView.bottomAnchor, constant: 32),
+            LoginViewController.emailContainerView.topAnchor.constraint(equalTo: LoginViewController.logoImageViewLoginScreen.bottomAnchor, constant: 32),
             LoginViewController.emailContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             LoginViewController.emailContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: 8),
             LoginViewController.emailContainerView.heightAnchor.constraint(equalToConstant: 60),
@@ -101,7 +103,8 @@ extension LoginViewController {
             //MARK: - Login Button Constrant
             
              LoginViewController.loginButton.topAnchor.constraint(equalTo: LoginViewController.passwordContainerView.bottomAnchor,constant: 15),
-            LoginViewController.loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 135),
+            LoginViewController.loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            LoginViewController.loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             LoginViewController.loginButton.heightAnchor.constraint(equalToConstant: 40),
             LoginViewController.loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             LoginViewController.loginButton.widthAnchor.constraint(equalToConstant: 120),

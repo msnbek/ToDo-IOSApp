@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
     
     //MARK: - LogoImageView
-    static  let logoImageView : UIImageView = {
+    static  let logoImageViewLoginScreen : UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
