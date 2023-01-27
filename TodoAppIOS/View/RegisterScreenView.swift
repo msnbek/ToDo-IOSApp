@@ -19,9 +19,11 @@ extension UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "camera.circle"), for: UIControl.State.normal)
         button.contentMode = .scaleToFill
+        button.clipsToBounds = true
         button.tintColor = .white
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
+       
         return button
         
     }()

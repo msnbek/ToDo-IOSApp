@@ -6,9 +6,40 @@
 //
 
 import UIKit
+
+//MARK: - Choosin image with Button.
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @objc func imageButtonTapped() {
+        
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[.originalImage] as? UIImage
+        SignUpViewController.cameraButton.setImage(image?.withRenderingMode(.alwaysOriginal) , for: UIControl.State.normal)
+        self.dismiss(animated: true, completion: nil)
+        SignUpViewController.cameraButton.layer.cornerRadius = 75
+        SignUpViewController.cameraButton.layer.borderColor = UIColor.white.cgColor
+        SignUpViewController.cameraButton.layer.borderWidth = 4
+    }
+ 
+}
+
 //MARK: - Selectors Func
 extension SignUpViewController {
-    static var loginButtonViewModel = LoginButtonViewModel()
+    
+    //MARK: - Properties
+    
+    static var loginButtonViewModel = SignUpSignInButtonViewModel()
+    
     //MARK: - Back Button Clicked Func
     @objc func backbuttonClicked() {
      segueWithHorizontal(viewController: LoginViewController())
@@ -20,9 +51,7 @@ extension SignUpViewController {
         
         view.endEditing(true)
     }
-    
-   
-    
+
     //MARK: - TextField Editin Func
     
     @objc func textFieldHandle(_ sender: UITextField) {
@@ -58,41 +87,33 @@ extension SignUpViewController {
 }
 
 extension SignUpViewController {
-    
-    func loginButtonEditingSingUpWC() {
-        
-        
-        if LoginViewController.signUpEmailTextField.text != "" && LoginViewController.signUpNameTextField.text != "" && LoginViewController.signUpPasswordTextField.text != "" && LoginViewController.signUpUsernameTextField.text != ""  {
-            
-            LoginViewController.signUpScreenSignUpButton.isEnabled = true
-            LoginViewController.signUpScreenSignUpButton.backgroundColor = #colorLiteral(red: 0.564852755, green: 0.936047019, blue: 0.9764705896, alpha: 1)
-        }else {
-            LoginViewController.signUpScreenSignUpButton.isEnabled = false
-            LoginViewController.signUpScreenSignUpButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        }
-        
-    }
-     
+  
     func style() {
         
         registerGradientBackgroundColor()
-        LoginViewController.backToLoginPageButton.addTarget(self, action: #selector(backbuttonClicked), for: UIControl.Event.touchUpInside)
-        LoginViewController.signUpEmailTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        LoginViewController.signUpNameTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        LoginViewController.signUpUsernameTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        LoginViewController.signUpPasswordTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        LoginViewController.cameraButton.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.uploadLabel.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.signUpEmailContainerView.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.signUpNameContainerView.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.signUpUsernameContainerView.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.signUpPasswordContainerView.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.signUpScreenSignUpButton.translatesAutoresizingMaskIntoConstraints = false
-        LoginViewController.backToLoginPageButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        SignUpViewController.backToLoginPageButton.addTarget(self, action: #selector(backbuttonClicked), for: UIControl.Event.touchUpInside)
+        SignUpViewController.signUpEmailTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpNameTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpUsernameTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpPasswordTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
+        SignUpViewController.cameraButton.addTarget(self, action: #selector(imageButtonTapped), for: UIControl.Event.touchUpInside)
+        
+        
+        SignUpViewController.cameraButton.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.uploadLabel.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.signUpEmailContainerView.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.signUpNameContainerView.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.signUpUsernameContainerView.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.signUpPasswordContainerView.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.signUpScreenSignUpButton.translatesAutoresizingMaskIntoConstraints = false
+        SignUpViewController.backToLoginPageButton.translatesAutoresizingMaskIntoConstraints = false
   
         
         
         //MARK: - GestureRecongnizer for Keyboard.
+        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hiddenKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
     
@@ -102,14 +123,14 @@ extension SignUpViewController {
     
     func layout() {
         
-        view.addSubview(LoginViewController.cameraButton)
-        view.addSubview(LoginViewController.uploadLabel)
-        view.addSubview(LoginViewController.signUpEmailContainerView)
-        view.addSubview(LoginViewController.signUpNameContainerView)
-        view.addSubview(LoginViewController.signUpUsernameContainerView)
-        view.addSubview(LoginViewController.signUpPasswordContainerView)
-        view.addSubview(LoginViewController.signUpScreenSignUpButton)
-        view.addSubview(LoginViewController.backToLoginPageButton)
+        view.addSubview(SignUpViewController.cameraButton)
+        view.addSubview(SignUpViewController.uploadLabel)
+        view.addSubview(SignUpViewController.signUpEmailContainerView)
+        view.addSubview(SignUpViewController.signUpNameContainerView)
+        view.addSubview(SignUpViewController.signUpUsernameContainerView)
+        view.addSubview(SignUpViewController.signUpPasswordContainerView)
+        view.addSubview(SignUpViewController.signUpScreenSignUpButton)
+        view.addSubview(SignUpViewController.backToLoginPageButton)
       
         NSLayoutConstraint.activate([
             
@@ -121,52 +142,53 @@ extension SignUpViewController {
             SignUpViewController.cameraButton.heightAnchor.constraint(equalToConstant: 150),
             SignUpViewController.cameraButton.widthAnchor.constraint(equalToConstant: 150),
             
-            //MARK: - Label
+            //MARK: - Label Constraint
             
-            LoginViewController.uploadLabel.topAnchor.constraint(equalTo: SignUpViewController.cameraButton.bottomAnchor, constant: 25),
-            LoginViewController.uploadLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            LoginViewController.uploadLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            LoginViewController.uploadLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            SignUpViewController.uploadLabel.topAnchor.constraint(equalTo: SignUpViewController.cameraButton.bottomAnchor, constant: 25),
+            SignUpViewController.uploadLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            SignUpViewController.uploadLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            SignUpViewController.uploadLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-        //MARK: - Email Container View
+        //MARK: - Email Container View Constraint
+             
+            SignUpViewController.signUpEmailContainerView.topAnchor.constraint(equalTo: SignUpViewController.uploadLabel.bottomAnchor, constant: 50),
+            SignUpViewController.signUpEmailContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            SignUpViewController.signUpEmailContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            SignUpViewController.signUpEmailContainerView.heightAnchor.constraint(equalToConstant: 60),
             
-            LoginViewController.signUpEmailContainerView.topAnchor.constraint(equalTo: LoginViewController.uploadLabel.bottomAnchor, constant: 50),
-            LoginViewController.signUpEmailContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            LoginViewController.signUpEmailContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
-            LoginViewController.signUpEmailContainerView.heightAnchor.constraint(equalToConstant: 60),
+            //MARK: - Name Container View Constraint
             
-            //MARK: - Name Container View
-            LoginViewController.signUpNameContainerView.topAnchor.constraint(equalTo: LoginViewController.signUpEmailContainerView.bottomAnchor, constant: 10),
-            LoginViewController.signUpNameContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            LoginViewController.signUpNameContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
-            LoginViewController.signUpNameContainerView.heightAnchor.constraint(equalToConstant: 60),
+            SignUpViewController.signUpNameContainerView.topAnchor.constraint(equalTo: SignUpViewController.signUpEmailContainerView.bottomAnchor, constant: 10),
+            SignUpViewController.signUpNameContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            SignUpViewController.signUpNameContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            SignUpViewController.signUpNameContainerView.heightAnchor.constraint(equalToConstant: 60),
             
-       //MARK: - Username Container View
+       //MARK: - Username Container View Constraint
             
-            LoginViewController.signUpUsernameContainerView.topAnchor.constraint(equalTo: LoginViewController.signUpNameContainerView.bottomAnchor, constant: 10),
-            LoginViewController.signUpUsernameContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            LoginViewController.signUpUsernameContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
-            LoginViewController.signUpUsernameContainerView.heightAnchor.constraint(equalToConstant: 60),
+            SignUpViewController.signUpUsernameContainerView.topAnchor.constraint(equalTo: SignUpViewController.signUpNameContainerView.bottomAnchor, constant: 10),
+            SignUpViewController.signUpUsernameContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            SignUpViewController.signUpUsernameContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            SignUpViewController.signUpUsernameContainerView.heightAnchor.constraint(equalToConstant: 60),
             
-            //MARK: - Password Container View
+            //MARK: - Password Container View Constraint
             
-            LoginViewController.signUpPasswordContainerView.topAnchor.constraint(equalTo: LoginViewController.signUpUsernameContainerView.bottomAnchor, constant: 10),
-            LoginViewController.signUpPasswordContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            LoginViewController.signUpPasswordContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
-            LoginViewController.signUpPasswordContainerView.heightAnchor.constraint(equalToConstant: 60),
+            SignUpViewController.signUpPasswordContainerView.topAnchor.constraint(equalTo: SignUpViewController.signUpUsernameContainerView.bottomAnchor, constant: 10),
+            SignUpViewController.signUpPasswordContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            SignUpViewController.signUpPasswordContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            SignUpViewController.signUpPasswordContainerView.heightAnchor.constraint(equalToConstant: 60),
             
-            //MARK: - SignUp Sign In Button
+            //MARK: - SignUp Sign In Button Constraint
             
-            LoginViewController.signUpScreenSignUpButton.topAnchor.constraint(equalTo: LoginViewController.signUpPasswordContainerView.bottomAnchor, constant: 15),
-            LoginViewController.signUpScreenSignUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            LoginViewController.signUpScreenSignUpButton.heightAnchor.constraint(equalToConstant: 60),
-            LoginViewController.signUpScreenSignUpButton.widthAnchor.constraint(equalToConstant: 180),
+            SignUpViewController.signUpScreenSignUpButton.topAnchor.constraint(equalTo: SignUpViewController.signUpPasswordContainerView.bottomAnchor, constant: 15),
+            SignUpViewController.signUpScreenSignUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            SignUpViewController.signUpScreenSignUpButton.heightAnchor.constraint(equalToConstant: 60),
+            SignUpViewController.signUpScreenSignUpButton.widthAnchor.constraint(equalToConstant: 180),
             
             
-            LoginViewController.backToLoginPageButton.topAnchor.constraint(equalTo: LoginViewController.signUpScreenSignUpButton.bottomAnchor,constant: 15),
-            LoginViewController.backToLoginPageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 123),
-            LoginViewController.backToLoginPageButton.heightAnchor.constraint(equalToConstant: 40),
-           LoginViewController.backToLoginPageButton.widthAnchor.constraint(equalToConstant: 150),
+            SignUpViewController.backToLoginPageButton.topAnchor.constraint(equalTo: SignUpViewController.signUpScreenSignUpButton.bottomAnchor,constant: 15),
+            SignUpViewController.backToLoginPageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 123),
+            SignUpViewController.backToLoginPageButton.heightAnchor.constraint(equalToConstant: 40),
+            SignUpViewController.backToLoginPageButton.widthAnchor.constraint(equalToConstant: 150),
             
         ])
      

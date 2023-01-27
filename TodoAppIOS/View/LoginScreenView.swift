@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIViewController {
+extension LoginViewController {
     
     //MARK: - LogoImageView
     static  let logoImageViewLoginScreen : UIImageView = {
@@ -141,12 +141,7 @@ extension UIViewController {
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.textAlignment = .center
         button.isEnabled = true
-     //   button.setTitleColor(.white, for: .normal)
-    //  button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-    //  button.layer.cornerRadius = 7
-        
-
-    
+ 
         return button
         
     }()

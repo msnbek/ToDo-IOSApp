@@ -8,7 +8,7 @@
 import UIKit
 //MARK: - Selector
 extension LoginViewController {
-    static var loginButtonViewModel = LoginButtonViewModel()
+    static var loginButtonViewModel = SignUpSignInButtonViewModel()
   
     
     //MARK: - TextField Editing Func
