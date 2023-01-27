@@ -9,16 +9,16 @@ import UIKit
 //MARK: - Selector
 extension LoginViewController {
     static var loginButtonViewModel = LoginButtonViewModel()
-    static var becomeAmemberButtonViewModel = BecomeMemberButtonViewModel()
+  
     
     //MARK: - TextField Editing Func
     @objc func handleTextField(_ sender: UITextField) {
         if sender == LoginViewController.emailTextField {
+            
             LoginViewController.loginButtonViewModel.emailText = sender.text
-            LoginViewController.becomeAmemberButtonViewModel.emailText = sender.text
         }else {
+            
             LoginViewController.loginButtonViewModel.passwordText = sender.text
-            LoginViewController.becomeAmemberButtonViewModel.passwordText = sender.text
         }
         loginButtonStatus()
         
@@ -27,7 +27,7 @@ extension LoginViewController {
     //MARK: - SingUp Button Clicked Func
     @objc func signUpButtonClicked() {
         
-        segueWithHorizontal(viewController: SignUpStyleLayout())
+        segueWithHorizontal(viewController: SignUpViewController())
         
     }
 }
@@ -36,7 +36,7 @@ extension LoginViewController {
 
 extension LoginViewController {
     private func loginButtonStatus() {
-        if LoginViewController.loginButtonViewModel.status {
+        if LoginViewController.loginButtonViewModel.statusLoginScreenLoginButton {
             LoginViewController.loginButton.isEnabled = true
             LoginViewController.loginButton.backgroundColor = .systemBlue
             LoginViewController.signUpButton.isEnabled = false
@@ -115,7 +115,7 @@ extension LoginViewController {
             LoginViewController.signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 123),
             
             LoginViewController.signUpButton.heightAnchor.constraint(equalToConstant: 40),
-            // LoginViewController.signUpButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+           
            LoginViewController.signUpButton.widthAnchor.constraint(equalToConstant: 150),
             
             //MARK: - Label Constrant

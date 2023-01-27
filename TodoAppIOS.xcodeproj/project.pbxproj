@@ -16,10 +16,11 @@
 		ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */; };
 		ED7D4D65298179B300A30272 /* LoginStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D64298179B300A30272 /* LoginStyleLayout.swift */; };
 		ED8A62322982A7EF00839C9E /* LoginButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62312982A7EF00839C9E /* LoginButtonViewModel.swift */; };
-		ED8A62342982C17200839C9E /* SignUpStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62332982C17200839C9E /* SignUpStyleLayout.swift */; };
-		ED8A62362982C2DD00839C9E /* RegisterStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62352982C2DD00839C9E /* RegisterStyleLayout.swift */; };
+		ED8A62342982C17200839C9E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62332982C17200839C9E /* SignUpViewController.swift */; };
+		ED8A62362982C2DD00839C9E /* SignUpStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62352982C2DD00839C9E /* SignUpStyleLayout.swift */; };
 		ED8A62382982C5F100839C9E /* RegisterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62372982C5F100839C9E /* RegisterScreenView.swift */; };
 		ED8A623A2982C9C000839C9E /* SegueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62392982C9C000839C9E /* SegueModel.swift */; };
+		ED8A623C2983368C00839C9E /* UIAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A623B2983368C00839C9E /* UIAlertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +35,11 @@
 		ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 		ED7D4D64298179B300A30272 /* LoginStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStyleLayout.swift; sourceTree = "<group>"; };
 		ED8A62312982A7EF00839C9E /* LoginButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonViewModel.swift; sourceTree = "<group>"; };
-		ED8A62332982C17200839C9E /* SignUpStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStyleLayout.swift; sourceTree = "<group>"; };
-		ED8A62352982C2DD00839C9E /* RegisterStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStyleLayout.swift; sourceTree = "<group>"; };
+		ED8A62332982C17200839C9E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ED8A62352982C2DD00839C9E /* SignUpStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStyleLayout.swift; sourceTree = "<group>"; };
 		ED8A62372982C5F100839C9E /* RegisterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenView.swift; sourceTree = "<group>"; };
 		ED8A62392982C9C000839C9E /* SegueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueModel.swift; sourceTree = "<group>"; };
+		ED8A623B2983368C00839C9E /* UIAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ED7D4D47298167A200A30272 /* LoginViewController.swift */,
-				ED8A62332982C17200839C9E /* SignUpStyleLayout.swift */,
+				ED8A62332982C17200839C9E /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +116,7 @@
 			children = (
 				ED8A62312982A7EF00839C9E /* LoginButtonViewModel.swift */,
 				ED8A62392982C9C000839C9E /* SegueModel.swift */,
+				ED8A623B2983368C00839C9E /* UIAlertModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				ED7D4D64298179B300A30272 /* LoginStyleLayout.swift */,
-				ED8A62352982C2DD00839C9E /* RegisterStyleLayout.swift */,
+				ED8A62352982C2DD00839C9E /* SignUpStyleLayout.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,12 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8A623A2982C9C000839C9E /* SegueModel.swift in Sources */,
+				ED8A623C2983368C00839C9E /* UIAlertModel.swift in Sources */,
 				ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */,
 				ED7D4D44298167A200A30272 /* AppDelegate.swift in Sources */,
 				ED7D4D46298167A200A30272 /* SceneDelegate.swift in Sources */,
-				ED8A62342982C17200839C9E /* SignUpStyleLayout.swift in Sources */,
+				ED8A62342982C17200839C9E /* SignUpViewController.swift in Sources */,
 				ED7D4D65298179B300A30272 /* LoginStyleLayout.swift in Sources */,
-				ED8A62362982C2DD00839C9E /* RegisterStyleLayout.swift in Sources */,
+				ED8A62362982C2DD00839C9E /* SignUpStyleLayout.swift in Sources */,
 				ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */,
 				ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */,
 				ED8A62322982A7EF00839C9E /* LoginButtonViewModel.swift in Sources */,

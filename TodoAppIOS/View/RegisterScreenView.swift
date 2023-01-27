@@ -9,23 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    //MARK: - Back Button 
-    
-   static let backButton: UIButton = {
-       
-       let button = UIButton(type: .system)
-       button.setImage(UIImage(systemName: "arrowshape.backward"), for: UIControl.State.normal)
-       button.contentMode = .scaleToFill
-       button.contentVerticalAlignment = .fill
-       button.contentHorizontalAlignment = .fill
-       button.tintColor = .white
-       button.setTitle("Back", for: UIControl.State.normal)
-       button.setTitleColor(.white, for: UIControl.State.normal)
-       button.isEnabled = true
-       button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-       
-        return button
-    }()
+
     
     
     //MARK: - CameraButton
@@ -257,7 +241,7 @@ extension UIViewController {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "square.and.pencil")
         imageView.tintColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageView)
@@ -305,26 +289,44 @@ extension UIViewController {
     static let signUpPasswordTextField : UITextField = {
        
         let textField = UITextField()
-        textField.placeholder = "Name"
+        textField.placeholder = "Password"
         textField.textColor = .white
         textField.borderStyle = .none
+        textField.isSecureTextEntry = true
         return textField
         
     }()
     
     
-    static let signUpLoginButton: UIButton = {
+    static let signUpScreenSignUpButton: UIButton = {
         
         let button = UIButton(type: .system)
         
-        button.setTitle("Login", for: UIControl.State.normal)
-        button.isEnabled = true
+        button.setTitle("Sign Up", for: UIControl.State.normal)
+       // button.isEnabled = true
         button.tintColor = UIColor.white
         button.titleLabel?.textAlignment = .center
         button.backgroundColor = #colorLiteral(red: 0.3916086643, green: 0.7564443834, blue: 0.9686274529, alpha: 1)
         button.layer.cornerRadius = 7
+        button.isEnabled = false
         
         return button
+    }()
+    
+    //MARK: - Back To Login Page Button
+    
+    static let backToLoginPageButton : UIButton = {
+        
+        let button = UIButton(type: .system)
+        
+        button.setTitle("If you are a member, click for back to login page", for: UIControl.State.normal)
+        button.setTitleColor( .systemIndigo , for: .normal)
+        button.backgroundColor = .clear
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = .systemFont(ofSize: 13)
+        return button
+        
     }()
     
     

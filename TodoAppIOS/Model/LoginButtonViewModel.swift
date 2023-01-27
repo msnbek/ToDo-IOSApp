@@ -11,21 +11,19 @@ struct LoginButtonViewModel {
     
     var emailText : String?
     var passwordText : String?
+    var username : String?
+    var name: String?
     
-    var status : Bool {
+    
+    var statusLoginScreenLoginButton : Bool {
         return emailText?.isEmpty == false && passwordText?.isEmpty == false
     }
-
-}
-
-struct BecomeMemberButtonViewModel {
     
-    var emailText : String?
-    var passwordText : String?
-    
-    var status: Bool {
+    var statusSignUpScreenLoginButton : Bool {
         
-        return emailText?.isEmpty == false && passwordText?.isEmpty == false
+        return emailText?.isEmpty == false && passwordText?.isEmpty == false && username?.isEmpty == false && name?.isEmpty == false
     }
-    
+
 }
+
+

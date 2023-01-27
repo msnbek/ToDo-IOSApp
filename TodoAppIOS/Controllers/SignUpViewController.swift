@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpStyleLayout: UIViewController {
+class SignUpViewController: UIViewController {
     
 //MARK: - Properties
     
@@ -17,11 +17,12 @@ class SignUpStyleLayout: UIViewController {
         super.viewDidLoad()
         style()
         layout()
-        navigationController?.navigationBar.isHidden = false
+      //  LoginViewController.signUpScreenSignUpButton.isEnabled = true
         
     }
     
-
+   
+  
 
 }
 
