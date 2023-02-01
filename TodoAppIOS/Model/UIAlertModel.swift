@@ -6,17 +6,17 @@
 //
 
 import UIKit
-
 extension UIViewController {
     
-    func makeAlert() {
-        
-        
-        
-    }
-    
-    
+   
 }
+
+
+    
+    
+    
+   
+
 
     
  

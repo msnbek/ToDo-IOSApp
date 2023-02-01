@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseFirestore
 
 //MARK: - Choosin image with Button.
 
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     
     @objc func imageButtonTapped() {
         
@@ -24,11 +28,13 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = info[.originalImage] as? UIImage
+        self.profileImage = image
         SignUpViewController.cameraButton.setImage(image?.withRenderingMode(.alwaysOriginal) , for: UIControl.State.normal)
         self.dismiss(animated: true, completion: nil)
         SignUpViewController.cameraButton.layer.cornerRadius = 75
         SignUpViewController.cameraButton.layer.borderColor = UIColor.white.cgColor
         SignUpViewController.cameraButton.layer.borderWidth = 4
+   
     }
  
 }
@@ -36,17 +42,23 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
 //MARK: - Selectors Func
 extension SignUpViewController {
     
+    
     //MARK: - Properties
     
     static var loginButtonViewModel = SignUpSignInButtonViewModel()
-    
+   
     //MARK: - Back Button Clicked Func
+    
     @objc func backbuttonClicked() {
      segueWithHorizontal(viewController: LoginViewController())
         print("tapped")
     }
+    @objc func signUpButtonClicked() {
+        segueWithCrossDissolve(viewController: MainViewController())
+    }
     
     //MARK: - Keyboard Hidden Func.
+    
     @objc func hiddenKeyboard() {
         
         view.endEditing(true)
@@ -54,7 +66,7 @@ extension SignUpViewController {
 
     //MARK: - TextField Editin Func
     
-    @objc func textFieldHandle(_ sender: UITextField) {
+    @objc func textFieldEditing(_ sender: UITextField) {
         
         if sender == LoginViewController.signUpEmailTextField {
             LoginViewController.loginButtonViewModel.emailText = sender.text
@@ -67,10 +79,8 @@ extension SignUpViewController {
         }
         signUpButtonStatus()
 
-    
     }
-    
-    
+ 
     private func signUpButtonStatus() {
         
         if LoginViewController.loginButtonViewModel.statusSignUpScreenLoginButton {
@@ -94,11 +104,13 @@ extension SignUpViewController {
         
         
         SignUpViewController.backToLoginPageButton.addTarget(self, action: #selector(backbuttonClicked), for: UIControl.Event.touchUpInside)
-        SignUpViewController.signUpEmailTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        SignUpViewController.signUpNameTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        SignUpViewController.signUpUsernameTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
-        SignUpViewController.signUpPasswordTextField.addTarget(self, action: #selector(textFieldHandle), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpEmailTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpNameTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpUsernameTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
+        SignUpViewController.signUpPasswordTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
         SignUpViewController.cameraButton.addTarget(self, action: #selector(imageButtonTapped), for: UIControl.Event.touchUpInside)
+        SignUpViewController.signUpScreenSignUpButton.addTarget(self, action: #selector(uploadFirebase), for: UIControl.Event.touchUpInside)
+        SignUpViewController.signUpScreenSignUpButton.addTarget(self, action:  #selector(signUpButtonClicked), for: UIControl.Event.touchUpInside)
         
         
         SignUpViewController.cameraButton.translatesAutoresizingMaskIntoConstraints = false

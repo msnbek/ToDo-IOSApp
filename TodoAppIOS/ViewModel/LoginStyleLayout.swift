@@ -12,7 +12,7 @@ extension LoginViewController {
   
     
     //MARK: - TextField Editing Func
-    @objc func handleTextField(_ sender: UITextField) {
+    @objc func textFieldEditing(_ sender: UITextField) {
         if sender == LoginViewController.emailTextField {
             
             LoginViewController.loginButtonViewModel.emailText = sender.text
@@ -63,8 +63,8 @@ extension LoginViewController {
         LoginViewController.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.label.translatesAutoresizingMaskIntoConstraints = false
         LoginViewController.logoImageViewLoginScreen.layer.cornerRadius = 150 / 2 // radius kodu.
-        LoginViewController.emailTextField.addTarget(self, action: #selector(handleTextField), for: UIControl.Event.editingChanged)
-        LoginViewController.passwordTextField.addTarget(self, action: #selector(handleTextField), for: UIControl.Event.editingChanged)
+        LoginViewController.emailTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
+        LoginViewController.passwordTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
         LoginViewController.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: UIControl.Event.touchUpInside)
 
    }

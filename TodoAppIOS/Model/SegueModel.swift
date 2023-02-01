@@ -18,4 +18,11 @@ extension UIViewController {
         self.present(navController, animated: true, completion: nil)
     }
     
+    public func segueWithCrossDissolve(viewController :UIViewController) {
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.modalTransitionStyle = .crossDissolve
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
+    }
+    
 }

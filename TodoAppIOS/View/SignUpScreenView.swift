@@ -103,6 +103,7 @@ extension UIViewController {
         textField.placeholder = "Email"
         textField.textColor = .white
         textField.borderStyle = .none
+        textField.autocapitalizationType = .none
         return textField
         
     }()
@@ -295,6 +296,7 @@ extension UIViewController {
         textField.textColor = .white
         textField.borderStyle = .none
         textField.isSecureTextEntry = true
+        textField.textContentType = .oneTimeCode
         return textField
         
     }()
