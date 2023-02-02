@@ -27,7 +27,7 @@ extension LoginViewController {
     //MARK: - SingUp Button Clicked Func
     @objc func signUpButtonClicked() {
         
-        segueWithHorizontal(viewController: SignUpViewController())
+        segue(viewController: SignUpViewController(), modalTranstitionStyle: .flipHorizontal)
         
     }
 }
@@ -54,7 +54,7 @@ extension LoginViewController {
  
     func style() {
     
-       loginBackgroundGradiendColor()
+        gradientBackgroundColor(firstColor: UIColor.systemRed.cgColor, secondColor: UIColor.systemMint.cgColor)
        
        LoginViewController.logoImageViewLoginScreen.translatesAutoresizingMaskIntoConstraints = false
        LoginViewController.emailContainerView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +66,13 @@ extension LoginViewController {
         LoginViewController.emailTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
         LoginViewController.passwordTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
         LoginViewController.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: UIControl.Event.touchUpInside)
+        LoginViewController.loginButton.addTarget(self, action: #selector(loginButtonClicked), for: UIControl.Event.touchUpInside)
+        
+        //Keyboard Gesture
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hiddenKeyboard))
+        view.addGestureRecognizer(gestureRecognizer)
+        
 
    }
     func layout() {

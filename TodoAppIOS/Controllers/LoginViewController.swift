@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     //MARK: - Properties
@@ -23,7 +24,6 @@ class LoginViewController: UIViewController {
 
 }
 
-//MARK: - Helpers
 
 
 

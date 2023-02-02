@@ -14,28 +14,37 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+
+       
+        
     }
     
+
     private func userStatus() {
         
-        if Auth.auth().currentUser?.uid != nil {
+        if Auth.auth().currentUser?.uid == nil {
             print("No user")
             let controller = UINavigationController(rootViewController: LoginViewController())
             controller.modalPresentationStyle = .fullScreen
             self.present(controller, animated: true)
         }else {
-            print("User exist.")
+            print("user exist")
+          
         }
     }
     
     private func signOut() {
         do {
             try Auth.auth().signOut()
+           userStatus()
         }catch {
-            
+            print(error.localizedDescription)
         }
        
     }
+    
+  
+ 
     
 
   

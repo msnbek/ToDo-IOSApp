@@ -310,7 +310,7 @@ extension UIViewController {
        // button.isEnabled = true
         button.tintColor = UIColor.white
         button.titleLabel?.textAlignment = .center
-        button.backgroundColor = #colorLiteral(red: 0.3916086643, green: 0.7564443834, blue: 0.9686274529, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         button.layer.cornerRadius = 7
         button.isEnabled = false
         

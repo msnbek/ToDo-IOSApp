@@ -50,20 +50,14 @@ extension SignUpViewController {
     //MARK: - Back Button Clicked Func
     
     @objc func backbuttonClicked() {
-     segueWithHorizontal(viewController: LoginViewController())
+        segue(viewController: LoginViewController(), modalTranstitionStyle: .flipHorizontal)
         print("tapped")
     }
     @objc func signUpButtonClicked() {
-        segueWithCrossDissolve(viewController: MainViewController())
+        segue(viewController: MainViewController(), modalTranstitionStyle: .crossDissolve)
     }
     
-    //MARK: - Keyboard Hidden Func.
-    
-    @objc func hiddenKeyboard() {
-        
-        view.endEditing(true)
-    }
-
+  
     //MARK: - TextField Editin Func
     
     @objc func textFieldEditing(_ sender: UITextField) {
@@ -86,7 +80,7 @@ extension SignUpViewController {
         if LoginViewController.loginButtonViewModel.statusSignUpScreenLoginButton {
             
             LoginViewController.signUpScreenSignUpButton.isEnabled = true
-            LoginViewController.signUpScreenSignUpButton.backgroundColor = #colorLiteral(red: 0.564852755, green: 0.936047019, blue: 0.9764705896, alpha: 1)
+            LoginViewController.signUpScreenSignUpButton.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         }else {
             LoginViewController.signUpScreenSignUpButton.isEnabled = false
             LoginViewController.signUpScreenSignUpButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -100,7 +94,7 @@ extension SignUpViewController {
   
     func style() {
         
-        registerGradientBackgroundColor()
+        gradientBackgroundColor(firstColor: UIColor.systemMint.cgColor, secondColor: UIColor.white.cgColor)
         
         
         SignUpViewController.backToLoginPageButton.addTarget(self, action: #selector(backbuttonClicked), for: UIControl.Event.touchUpInside)
@@ -109,8 +103,8 @@ extension SignUpViewController {
         SignUpViewController.signUpUsernameTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
         SignUpViewController.signUpPasswordTextField.addTarget(self, action: #selector(textFieldEditing), for: UIControl.Event.editingChanged)
         SignUpViewController.cameraButton.addTarget(self, action: #selector(imageButtonTapped), for: UIControl.Event.touchUpInside)
-        SignUpViewController.signUpScreenSignUpButton.addTarget(self, action: #selector(uploadFirebase), for: UIControl.Event.touchUpInside)
-        SignUpViewController.signUpScreenSignUpButton.addTarget(self, action:  #selector(signUpButtonClicked), for: UIControl.Event.touchUpInside)
+        SignUpViewController.signUpScreenSignUpButton.addTarget(self, action: #selector(registerButtonClicked), for: UIControl.Event.touchUpInside)
+       // SignUpViewController.signUpScreenSignUpButton.addTarget(self, action:  #selector(signUpButtonClicked), for: UIControl.Event.touchUpInside)
         
         
         SignUpViewController.cameraButton.translatesAutoresizingMaskIntoConstraints = false

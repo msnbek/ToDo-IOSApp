@@ -15,12 +15,15 @@
 		ED43629A29842EDA00CC128E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43629929842EDA00CC128E /* MainViewController.swift */; };
 		ED43629C2984314B00CC128E /* MainStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43629B2984314B00CC128E /* MainStyleLayout.swift */; };
 		ED43629E2984316700CC128E /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43629D2984316700CC128E /* MainScreenView.swift */; };
+		ED63A6E8298AC3EF0044716C /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63A6E7298AC3EF0044716C /* KeyboardModel.swift */; };
+		ED63A6EB298ACA660044716C /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = ED63A6EA298ACA660044716C /* JGProgressHUD */; };
+		ED63A6ED298ACB0B0044716C /* JGProgressHUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63A6EC298ACB0B0044716C /* JGProgressHUDModel.swift */; };
 		ED7D4D44298167A200A30272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D43298167A200A30272 /* AppDelegate.swift */; };
 		ED7D4D46298167A200A30272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D45298167A200A30272 /* SceneDelegate.swift */; };
 		ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D47298167A200A30272 /* LoginViewController.swift */; };
 		ED7D4D4D298167A300A30272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7D4D4C298167A300A30272 /* Assets.xcassets */; };
 		ED7D4D50298167A300A30272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7D4D4E298167A300A30272 /* LaunchScreen.storyboard */; };
-		ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */; };
+		ED7D4D5D2981690400A30272 /* GradientColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5C2981690400A30272 /* GradientColorModel.swift */; };
 		ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */; };
 		ED7D4D65298179B300A30272 /* LoginStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D64298179B300A30272 /* LoginStyleLayout.swift */; };
 		ED8A62322982A7EF00839C9E /* SignUpSignInButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62312982A7EF00839C9E /* SignUpSignInButtonViewModel.swift */; };
@@ -28,7 +31,7 @@
 		ED8A62362982C2DD00839C9E /* SignUpStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62352982C2DD00839C9E /* SignUpStyleLayout.swift */; };
 		ED8A62382982C5F100839C9E /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62372982C5F100839C9E /* SignUpScreenView.swift */; };
 		ED8A623A2982C9C000839C9E /* SegueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A62392982C9C000839C9E /* SegueModel.swift */; };
-		ED8A623C2983368C00839C9E /* UIAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A623B2983368C00839C9E /* UIAlertModel.swift */; };
+		EDBD8643298BF7F20054D8E7 /* UIAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD8642298BF7F20054D8E7 /* UIAlertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,8 @@
 		ED43629929842EDA00CC128E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ED43629B2984314B00CC128E /* MainStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStyleLayout.swift; sourceTree = "<group>"; };
 		ED43629D2984316700CC128E /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		ED63A6E7298AC3EF0044716C /* KeyboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
+		ED63A6EC298ACB0B0044716C /* JGProgressHUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDModel.swift; sourceTree = "<group>"; };
 		ED7D4D40298167A200A30272 /* TodoAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7D4D43298167A200A30272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7D4D45298167A200A30272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +49,7 @@
 		ED7D4D4C298167A300A30272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7D4D4F298167A300A30272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7D4D51298167A300A30272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForGradient.swift; sourceTree = "<group>"; };
+		ED7D4D5C2981690400A30272 /* GradientColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColorModel.swift; sourceTree = "<group>"; };
 		ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 		ED7D4D64298179B300A30272 /* LoginStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStyleLayout.swift; sourceTree = "<group>"; };
 		ED8A62312982A7EF00839C9E /* SignUpSignInButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSignInButtonViewModel.swift; sourceTree = "<group>"; };
@@ -52,7 +57,7 @@
 		ED8A62352982C2DD00839C9E /* SignUpStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStyleLayout.swift; sourceTree = "<group>"; };
 		ED8A62372982C5F100839C9E /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
 		ED8A62392982C9C000839C9E /* SegueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueModel.swift; sourceTree = "<group>"; };
-		ED8A623B2983368C00839C9E /* UIAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertModel.swift; sourceTree = "<group>"; };
+		EDBD8642298BF7F20054D8E7 /* UIAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED63A6EB298ACA660044716C /* JGProgressHUD in Frameworks */,
 				ED4362912983EC3200CC128E /* FirebaseAuth in Frameworks */,
 				ED4362932983EC3200CC128E /* FirebaseFirestore in Frameworks */,
 				ED4362952983EC3200CC128E /* FirebaseStorage in Frameworks */,
@@ -99,9 +105,8 @@
 				ED4362982983F49A00CC128E /* Services */,
 				ED7D4D632981733D00A30272 /* View */,
 				ED7D4D622981733800A30272 /* ViewModel */,
-				ED7D4D612981732D00A30272 /* Model */,
+				ED7D4D612981732D00A30272 /* Ultis */,
 				ED7D4D5B298168EA00A30272 /* Controllers */,
-				ED7D4D59298168D100A30272 /* Ultis */,
 				ED7D4D58298167B400A30272 /* Files */,
 			);
 			path = TodoAppIOS;
@@ -120,14 +125,6 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
-		ED7D4D59298168D100A30272 /* Ultis */ = {
-			isa = PBXGroup;
-			children = (
-				ED7D4D5C2981690400A30272 /* ExtensionForGradient.swift */,
-			);
-			path = Ultis;
-			sourceTree = "<group>";
-		};
 		ED7D4D5B298168EA00A30272 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,14 +135,17 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		ED7D4D612981732D00A30272 /* Model */ = {
+		ED7D4D612981732D00A30272 /* Ultis */ = {
 			isa = PBXGroup;
 			children = (
 				ED8A62312982A7EF00839C9E /* SignUpSignInButtonViewModel.swift */,
 				ED8A62392982C9C000839C9E /* SegueModel.swift */,
-				ED8A623B2983368C00839C9E /* UIAlertModel.swift */,
+				ED63A6E7298AC3EF0044716C /* KeyboardModel.swift */,
+				ED7D4D5C2981690400A30272 /* GradientColorModel.swift */,
+				ED63A6EC298ACB0B0044716C /* JGProgressHUDModel.swift */,
+				EDBD8642298BF7F20054D8E7 /* UIAlertModel.swift */,
 			);
-			path = Model;
+			path = Ultis;
 			sourceTree = "<group>";
 		};
 		ED7D4D622981733800A30272 /* ViewModel */ = {
@@ -188,6 +188,7 @@
 				ED4362902983EC3200CC128E /* FirebaseAuth */,
 				ED4362922983EC3200CC128E /* FirebaseFirestore */,
 				ED4362942983EC3200CC128E /* FirebaseStorage */,
+				ED63A6EA298ACA660044716C /* JGProgressHUD */,
 			);
 			productName = TodoAppIOS;
 			productReference = ED7D4D40298167A200A30272 /* TodoAppIOS.app */;
@@ -219,6 +220,7 @@
 			mainGroup = ED7D4D37298167A200A30272;
 			packageReferences = (
 				ED43628F2983EC3100CC128E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				ED63A6E9298ACA660044716C /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = ED7D4D41298167A200A30272 /* Products */;
 			projectDirPath = "";
@@ -248,8 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8A623A2982C9C000839C9E /* SegueModel.swift in Sources */,
-				ED8A623C2983368C00839C9E /* UIAlertModel.swift in Sources */,
 				ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */,
+				EDBD8643298BF7F20054D8E7 /* UIAlertModel.swift in Sources */,
 				ED7D4D44298167A200A30272 /* AppDelegate.swift in Sources */,
 				ED7D4D46298167A200A30272 /* SceneDelegate.swift in Sources */,
 				ED8A62342982C17200839C9E /* SignUpViewController.swift in Sources */,
@@ -257,9 +259,11 @@
 				ED43629A29842EDA00CC128E /* MainViewController.swift in Sources */,
 				ED43629C2984314B00CC128E /* MainStyleLayout.swift in Sources */,
 				ED8A62362982C2DD00839C9E /* SignUpStyleLayout.swift in Sources */,
+				ED63A6ED298ACB0B0044716C /* JGProgressHUDModel.swift in Sources */,
 				ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */,
-				ED7D4D5D2981690400A30272 /* ExtensionForGradient.swift in Sources */,
+				ED7D4D5D2981690400A30272 /* GradientColorModel.swift in Sources */,
 				ED4362972983F49500CC128E /* FirebaseModel.swift in Sources */,
+				ED63A6E8298AC3EF0044716C /* KeyboardModel.swift in Sources */,
 				ED8A62322982A7EF00839C9E /* SignUpSignInButtonViewModel.swift in Sources */,
 				ED8A62382982C5F100839C9E /* SignUpScreenView.swift in Sources */,
 				ED43629E2984316700CC128E /* MainScreenView.swift in Sources */,
@@ -478,6 +482,14 @@
 				kind = branch;
 			};
 		};
+		ED63A6E9298ACA660044716C /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -495,6 +507,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ED43628F2983EC3100CC128E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		ED63A6EA298ACA660044716C /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED63A6E9298ACA660044716C /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

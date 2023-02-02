@@ -10,72 +10,118 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 
-
-    struct SignUpModelFirebase {
+extension UIViewController {
+    
+    //MARK: - Login Button Function Firebase
+    
+    @objc func loginButtonClicked() {
         
-        let emailText : String
-        let passwordText : String
-        let nameText : String
-        let usernameText : String
-        let profileImage : UIImage
-       
+        guard let emailText = LoginViewController.emailTextField.text else {return}
+        guard let passwordText = LoginViewController.passwordTextField.text else {return}
+        self.showHUD(show: true)
+        Auth.auth().signIn(withEmail: emailText, password: passwordText) { data, error in
+            if let err = error {
+                self.showHUD(show: false)
+                self.makeAlert(titleInput: "Error", messageInput: err.localizedDescription)
+                
+            }else {
+                self.showHUD(show: true)
+                self.segueWithCrossDissolve(viewController: MainViewController())
+            }
+        }
+        
     }
     
-   struct FirebaseServices {
-       
-       
-       static func createUser(user : SignUpModelFirebase, completion: @escaping(Error?) -> Void) {
-       
-           let storage  = Storage.storage()
-           let storageReference = storage.reference()
-           let mediaFolder = storageReference.child("Profile Image")
-           
-           if let data = user.profileImage.jpegData(compressionQuality: 0.5) {
-               
-               let uuidImg = UUID().uuidString
-           
-               let imageReference = mediaFolder.child("\(uuidImg)")
-               imageReference.putData(data) { storageMetaData, error in
-                   
-                   if let error = error {
+    //MARK: - Login Button Function Firebase
+    
+    @objc func registerButtonClicked() {
+        
+        guard let emailText = SignUpViewController.signUpEmailTextField.text else {return}
+        guard let passwordText = SignUpViewController.signUpPasswordTextField.text else {return}
+        guard let nameText = SignUpViewController.signUpNameTextField.text else {return}
+        guard let usernameText = SignUpViewController.signUpUsernameTextField.text else {return}
+        showHUD(show: true)
+                
+        if SignUpViewController.cameraButton.currentImage != UIImage(systemName: "camera.circle") {
+                    
+                    let storage = Storage.storage()
+                    let storageReference = storage.reference()
+                    
+                    let mediaFolder = storageReference.child("media")
+                    
+                    if let data = SignUpViewController.cameraButton.currentImage?.jpegData(compressionQuality: 0.5) {
+                        let uuid = UUID().uuidString
+                        
+                        let imgReference = mediaFolder.child("\(uuid).jpg")
+                        imgReference.putData(data) { storageMetaData, error in
+                            if let err = error {
+                                print(err.localizedDescription)
+                            }else {
+                                imgReference.downloadURL { url, error in
+                                    if error == nil {
+                                        
+                                        Auth.auth().createUser(withEmail: emailText, password: passwordText) { authData, error in
+                                            
+                                            if let err = error {
+                                                
+                                                let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                                                let action = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default){ [self] (UIAlertAction) in
+                                                    self.showHUD(show: false)
+                                                    
+                                                }
+                                                alert.addAction(action)
+                                                self.present(alert, animated: true)
+                                                
+                                            }else {
+                                                self.showHUD(show: true)
+                                                self.segueWithCrossDissolve(viewController: MainViewController())
+                                            }
+                                        }
+                                        
+                                        guard let imageURL = url?.absoluteString else {return}
+                                          
+                                        
+                                        let fireStoreDatabase = Firestore.firestore()
+                                        var _ : DocumentReference? = nil
+                                        guard let  currentUserUid = Auth.auth().currentUser?.uid else {return}
+                                
+                                        let user = [
+                                        
+                                            "email" : emailText,
+                                            "username": usernameText,
+                                            "name": nameText,
+                                            "imageUrl" : imageURL,
+                                            "uid": currentUserUid
+                                            
+                                        ]
+    
+                                        fireStoreDatabase.collection("users").document(currentUserUid).setData(user, merge:  true)
+                        
+                                        
+                                    }
+                                    
+                                }
+                            }
+                        }
                        
-                       print(error.localizedDescription)
-                   }else {
-                       imageReference.downloadURL { url, error in
-                           if let error = error {
-                               print(error.localizedDescription)
-                           }else {
-                               guard let imageURL = url?.absoluteString else {return}
-                               print(imageURL)
-                               Auth.auth().createUser(withEmail: user.emailText, password: user.passwordText) { data, error in
-                                   
-                                   guard let uid = data?.user.uid else {return}
-                                   
-                                  let data = [
-                                   
-                                   "email" : user.emailText,
-                                   "username" : user.usernameText,
-                                   "name" : user.nameText,
-                                   "profileImageUrl" : imageURL,
-                                   "uid" : uid
+                    }
+                    
+                 
+                }else {
+                    
+                 makeAlert(titleInput: "Ok", messageInput: "Please Selecet Profile Picture")
+                    
+                }
     
-                                  ] as [String : Any]
-                                   let firestoreDatabase =  Firestore.firestore()
-                                   firestoreDatabase.collection("Users").document(uid).setData(data,completion: completion)
-                                   
-                               }
-                           }
-                           
-                       }
-                   }
-               }
-               
-           }
-          
-       
-       }
-     
     }
+    
+    
+    
+    
+    
+    
+    
+}
 
 
 

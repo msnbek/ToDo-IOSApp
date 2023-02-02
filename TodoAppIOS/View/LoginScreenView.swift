@@ -126,6 +126,7 @@ extension LoginViewController {
         textField.isSecureTextEntry = true
         textField.textColor = .white
         textField.borderStyle = .none
+        textField.textContentType = .oneTimeCode
         return textField
                 
     }()
