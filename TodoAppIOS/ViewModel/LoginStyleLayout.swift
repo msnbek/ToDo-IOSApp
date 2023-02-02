@@ -129,8 +129,8 @@ extension LoginViewController {
             
             LoginViewController.label.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 50),
             LoginViewController.label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 300),
-            LoginViewController.label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 160),
-            LoginViewController.label.leadingAnchor.constraint(equalTo: view.trailingAnchor),
+            LoginViewController.label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            LoginViewController.label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
    
     }

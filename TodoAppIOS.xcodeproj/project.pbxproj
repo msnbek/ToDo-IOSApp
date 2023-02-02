@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED2F0EAD298C6B3B00001E15 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F0EAC298C6B3B00001E15 /* NewTaskViewController.swift */; };
+		ED2F0EAF298C6C5B00001E15 /* NewTaskStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F0EAE298C6C5B00001E15 /* NewTaskStyleLayout.swift */; };
+		ED2F0EB1298C6CAB00001E15 /* NewTaskScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F0EB0298C6CAB00001E15 /* NewTaskScreenView.swift */; };
 		ED43628E2983EA6E00CC128E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED43628D2983EA6E00CC128E /* GoogleService-Info.plist */; };
 		ED4362912983EC3200CC128E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED4362902983EC3200CC128E /* FirebaseAuth */; };
 		ED4362932983EC3200CC128E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ED4362922983EC3200CC128E /* FirebaseFirestore */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED2F0EAC298C6B3B00001E15 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		ED2F0EAE298C6C5B00001E15 /* NewTaskStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskStyleLayout.swift; sourceTree = "<group>"; };
+		ED2F0EB0298C6CAB00001E15 /* NewTaskScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskScreenView.swift; sourceTree = "<group>"; };
 		ED43628D2983EA6E00CC128E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED4362962983F49500CC128E /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		ED43629929842EDA00CC128E /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				EDBD8644298C0FFE0054D8E7 /* PastTaskViewController.swift */,
 				EDBD8646298C10080054D8E7 /* TasksViewController.swift */,
 				EDBD8648298C10190054D8E7 /* ProfileViewController.swift */,
+				ED2F0EAC298C6B3B00001E15 /* NewTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 				ED7D4D64298179B300A30272 /* LoginStyleLayout.swift */,
 				ED8A62352982C2DD00839C9E /* SignUpStyleLayout.swift */,
 				ED43629B2984314B00CC128E /* MainStyleLayout.swift */,
+				ED2F0EAE298C6C5B00001E15 /* NewTaskStyleLayout.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 				ED7D4D5F29816C8000A30272 /* LoginScreenView.swift */,
 				ED8A62372982C5F100839C9E /* SignUpScreenView.swift */,
 				ED43629D2984316700CC128E /* MainScreenView.swift */,
+				ED2F0EB0298C6CAB00001E15 /* NewTaskScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,9 +281,12 @@
 				ED63A6ED298ACB0B0044716C /* JGProgressHUDModel.swift in Sources */,
 				ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */,
 				ED7D4D5D2981690400A30272 /* GradientColorModel.swift in Sources */,
+				ED2F0EAD298C6B3B00001E15 /* NewTaskViewController.swift in Sources */,
 				ED4362972983F49500CC128E /* FirebaseModel.swift in Sources */,
 				ED63A6E8298AC3EF0044716C /* KeyboardModel.swift in Sources */,
 				ED8A62322982A7EF00839C9E /* SignUpSignInButtonViewModel.swift in Sources */,
+				ED2F0EB1298C6CAB00001E15 /* NewTaskScreenView.swift in Sources */,
+				ED2F0EAF298C6C5B00001E15 /* NewTaskStyleLayout.swift in Sources */,
 				EDBD8647298C10080054D8E7 /* TasksViewController.swift in Sources */,
 				EDBD8649298C10190054D8E7 /* ProfileViewController.swift in Sources */,
 				ED8A62382982C5F100839C9E /* SignUpScreenView.swift in Sources */,
