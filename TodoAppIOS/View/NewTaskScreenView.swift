@@ -18,6 +18,20 @@ extension NewTaskViewController {
         return label
         
     }()
+    
+     static let textView : InputTextView = {
+       
+        let textView = InputTextView()
+         textView.placeHolder = "Enter new task."
+         textView.backgroundColor = .white
+         textView.layer.cornerRadius = 60 / 8
+        textView.layer.borderColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+         textView.layer.borderWidth = 2
+         textView.font = UIFont.systemFont(ofSize: 18)
+         
+         return textView
+        
+    }()
 }
 
 
