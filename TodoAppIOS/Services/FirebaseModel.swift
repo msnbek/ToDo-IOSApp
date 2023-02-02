@@ -26,7 +26,7 @@ extension UIViewController {
                 
             }else {
                 self.showHUD(show: true)
-                self.segueWithCrossDissolve(viewController: MainViewController())
+                self.segue(viewController: MainViewController(), modalTranstitionStyle: .crossDissolve)
             }
         }
         
@@ -74,7 +74,7 @@ extension UIViewController {
                                                 
                                             }else {
                                                 self.showHUD(show: true)
-                                                self.segueWithCrossDissolve(viewController: MainViewController())
+                                                self.segue(viewController: MainViewController(), modalTranstitionStyle: .crossDissolve)
                                             }
                                         }
                                         
@@ -105,8 +105,7 @@ extension UIViewController {
                         }
                        
                     }
-                    
-                 
+  
                 }else {
                     
                  makeAlert(titleInput: "Ok", messageInput: "Please Selecet Profile Picture")
