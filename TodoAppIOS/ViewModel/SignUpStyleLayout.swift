@@ -54,7 +54,7 @@ extension SignUpViewController {
         print("tapped")
     }
     @objc func signUpButtonClicked() {
-        segue(viewController: MainViewController(), modalTranstitionStyle: .crossDissolve)
+        segue(viewController: MainTabBarViewController(), modalTranstitionStyle: .crossDissolve)
     }
     
   

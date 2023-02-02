@@ -8,15 +8,17 @@
 import UIKit
 import FirebaseAuth
 
-class MainViewController: UIViewController {
+class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .white
-
-       
+       style()
+        layout()
         
+     
+        
+        
+
     }
     
 

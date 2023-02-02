@@ -26,7 +26,7 @@ extension UIViewController {
                 
             }else {
                 self.showHUD(show: true)
-                self.segue(viewController: MainViewController(), modalTranstitionStyle: .crossDissolve)
+                self.segue(viewController: MainTabBarViewController(), modalTranstitionStyle: .crossDissolve)
             }
         }
         
@@ -74,7 +74,7 @@ extension UIViewController {
                                                 
                                             }else {
                                                 self.showHUD(show: true)
-                                                self.segue(viewController: MainViewController(), modalTranstitionStyle: .crossDissolve)
+                                                self.segue(viewController: MainTabBarViewController(), modalTranstitionStyle: .crossDissolve)
                                             }
                                         }
                                         
