@@ -11,8 +11,10 @@ class NewTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         style()
         layout()
+        
         view.backgroundColor = .black.withAlphaComponent(0.7)
       
     }

@@ -32,6 +32,41 @@ extension NewTaskViewController {
          return textView
         
     }()
+    
+    static let addTaskButton : UIButton = {
+        
+        let button = UIButton(type: .system)
+        
+        button.setTitle("Add", for: UIControl.State.normal)
+        button.configuration = .tinted()
+        button.configuration?.cornerStyle = .medium
+        button.layer.cornerRadius = 10
+        button.backgroundColor = #colorLiteral(red: 0.6180379942, green: 0.7647058964, blue: 0.2574318954, alpha: 1)
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica", size:12)
+        
+        return button
+        
+        
+    }()
+    
+    static let cancelButton : UIButton = {
+        
+        let button = UIButton(type: .system)
+        
+        button.setTitle("Cancel", for: UIControl.State.normal)
+        button.configuration = .tinted()
+        button.configuration?.cornerStyle = .medium
+        button.layer.cornerRadius = 10
+        button.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica", size:12)
+        
+        return button
+        
+        
+    }()
+    
 }
 
 

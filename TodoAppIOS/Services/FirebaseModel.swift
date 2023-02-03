@@ -114,6 +114,23 @@ extension UIViewController {
     
     }
     
+    @objc func addTaskButtonClicked() {
+        
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
+        guard let text = NewTaskViewController.textView.text else {return}
+        let taskId = NSUUID().uuidString
+        let data = [
+            "text" : text,
+            "timestamp" : Timestamp(date: Date()),
+            "taskId" : taskId,
+        ] as [String : Any]
+        Firestore.firestore().collection("tasks").document(currentUid).collection("continue").document(taskId).setData(data)
+        NewTaskViewController.textView.text = ""
+        
+        
+        
+    }
+    
     
     
     
