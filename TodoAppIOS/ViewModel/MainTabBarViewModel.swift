@@ -9,22 +9,15 @@ import UIKit
 
 
 extension MainTabBarViewController {
-    //MARK: - Selectors
-    @objc func addButtonClicked() {
-        
-    let controller = NewTaskViewController()
-        if let sheet = controller.sheetPresentationController {
-            sheet.detents = [.medium() ]
-        }
-        self.present(controller, animated: true)
-    }
-    
-    
+
+
+
     func style() {
         
         //MARK: - MainTabBar Created
         
            view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        
        
            let pastTaskViewController = UINavigationController(rootViewController: PastTaskViewController())
            let taskViewController = UINavigationController(rootViewController: TasksViewController())
@@ -58,35 +51,9 @@ extension MainTabBarViewController {
      
     }
     
+ 
     
-    func layout() {
-        
-        TasksViewController.addButton.addTarget(self, action: #selector(addButtonClicked), for: UIControl.Event.touchUpInside)
-        
-        
-        TasksViewController.addButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        view.addSubview(TasksViewController.addButton)
-        
-        
-        NSLayoutConstraint.activate([
-            
-           
-        
-        
-            //MARK: - AddButton Constraint Layout
-            
-            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: TasksViewController.addButton.bottomAnchor, constant: 80),
-            view.trailingAnchor.constraint(equalTo: TasksViewController.addButton.trailingAnchor, constant: 15),
-            TasksViewController.addButton.widthAnchor.constraint(equalToConstant: 60),
-            TasksViewController.addButton.heightAnchor.constraint(equalToConstant: 60)
-        
-        
-        ])
-        
-        
-        
-    }
+    
+   
     
 }
