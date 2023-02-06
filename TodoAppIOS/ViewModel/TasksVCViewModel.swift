@@ -14,6 +14,8 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     static let  reuseIdentifier = "TasksCell"
     
+   static var tasks = [Tasks]()
+    
   
     //MARK: - Helpers
     
@@ -23,12 +25,14 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
     //MARK: - UICollectionViews Model
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        return TasksViewController.tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksViewController.reuseIdentifier, for: indexPath) as! TasksViewCell
-       
+        let task = TasksViewController.tasks[indexPath.row]
+       print(task)
         return cell
     }
     

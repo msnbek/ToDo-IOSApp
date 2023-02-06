@@ -9,17 +9,25 @@ import UIKit
 import FirebaseAuth
 
 class MainTabBarViewController: UITabBarController {
+    
+    //MARK: - Properties
+    
+    let pastTaskViewController = UINavigationController(rootViewController: PastTaskViewController())
+    let taskViewController = TasksViewController()
+    let profileViewController = UINavigationController(rootViewController: ProfileViewController())
 
     override func viewDidLoad() {
         super.viewDidLoad()
        style()
       // layout()
-        
+      fetchUser()
      
         
         
 
     }
+    
+    //MARK: - Helpers
     
 
     private func userStatus() {
@@ -43,6 +51,15 @@ class MainTabBarViewController: UITabBarController {
             print(error.localizedDescription)
         }
        
+    }
+    
+  
+    private func fetchUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return}
+        fetchUser(uid: uid) { user in
+            self.taskViewController.user = user
+            print(user)
+        }
     }
     
   

@@ -116,6 +116,8 @@ extension UIViewController {
         
     }
     
+    //MARK: - Adding new tasks to Firebase
+    
     @objc func addTaskButtonClicked() {
         
         guard let currentUid = Auth.auth().currentUser?.uid else {return}
@@ -126,13 +128,14 @@ extension UIViewController {
             "timestamp" : Timestamp(date: Date()),
             "taskId" : taskId,
         ] as [String : Any]
-        Firestore.firestore().collection("tasks").document(currentUid).collection("continue").document(taskId).setData(data)
+        Firestore.firestore().collection("tasks").document(currentUid).collection("ongoing_tasks").document(taskId).setData(data)
         NewTaskViewController.textView.text = ""
         
         
         
     }
     
+    //MARK: - Fetch User From Firebase
     
      func fetchUser(uid: String, completion: @escaping(User)-> Void){
          Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
@@ -140,6 +143,21 @@ extension UIViewController {
              let user = User(data: data)
             completion(user)
         }
+        
+    }
+    //MARK: - Fetch Tasks From Firebase
+    func fetchTasks(uid : String,completion : @escaping([Tasks])-> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        var tasks = [Tasks]()
+        Firestore.firestore().collection("tasks").document(uid).collection("ongoing_tasks").order(by: "timestamp").addSnapshotListener { snapshot, error in
+            snapshot?.documentChanges.forEach({ value in
+                let data = value.document.data()
+                tasks.append(Tasks(data: data))
+                completion(tasks)
+              
+            })
+        }
+        
         
     }
     
