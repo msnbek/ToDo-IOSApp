@@ -23,9 +23,19 @@ extension TasksViewController {
     static let collectionView : UICollectionView = {
        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: TasksViewController.reuseIdentifier)
+        collectionView.register(TasksViewCell.self, forCellWithReuseIdentifier: TasksViewController.reuseIdentifier)
         collectionView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         return collectionView
+    }()
+    
+    static let nameLabel : UILabel = {
+       
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.textColor = .black
+        
+        return label
+        
     }()
     
 }

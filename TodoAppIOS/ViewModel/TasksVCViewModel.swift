@@ -6,19 +6,29 @@
 //
 
 import UIKit
+import FirebaseAuth
+
+
 
 extension TasksViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     static let  reuseIdentifier = "TasksCell"
     
+  
+    //MARK: - Helpers
+    
+   
+    
+    
+    //MARK: - UICollectionViews Model
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksViewController.reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksViewController.reuseIdentifier, for: indexPath) as! TasksViewCell
+       
         return cell
     }
     
@@ -45,14 +55,18 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
     //MARK: - Layout Func.
     
     func layout() {
+        
         title = "Tasks"
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+       // navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.prefersLargeTitles = true
         TasksViewController.addButton.addTarget(self, action: #selector(addButtonClicked), for: UIControl.Event.touchUpInside)
         
         TasksViewController.addButton.translatesAutoresizingMaskIntoConstraints = false
         TasksViewController.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        TasksViewController.nameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(TasksViewController.collectionView)
         view.addSubview(TasksViewController.addButton)
+        view.addSubview(TasksViewController.nameLabel)
        
         
         NSLayoutConstraint.activate([
@@ -69,7 +83,13 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
             TasksViewController.collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
             TasksViewController.collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
             view.trailingAnchor.constraint(equalTo: TasksViewController.collectionView.trailingAnchor,constant: 10),
-            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: TasksViewController.collectionView.bottomAnchor, constant: 14)
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: TasksViewController.collectionView.bottomAnchor, constant: 14),
+            
+            
+            //MARK: - Name Label Constraint Layout
+            
+            TasksViewController.nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            TasksViewController.nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
         ])
         
     }

@@ -22,6 +22,8 @@
 		ED63A6E8298AC3EF0044716C /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63A6E7298AC3EF0044716C /* KeyboardModel.swift */; };
 		ED63A6EB298ACA660044716C /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = ED63A6EA298ACA660044716C /* JGProgressHUD */; };
 		ED63A6ED298ACB0B0044716C /* JGProgressHUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63A6EC298ACB0B0044716C /* JGProgressHUDModel.swift */; };
+		ED67D599298E89F000966D0B /* TasksViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D598298E89F000966D0B /* TasksViewCell.swift */; };
+		ED67D59B298EA56D00966D0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D59A298EA56D00966D0B /* User.swift */; };
 		ED7D4D44298167A200A30272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D43298167A200A30272 /* AppDelegate.swift */; };
 		ED7D4D46298167A200A30272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D45298167A200A30272 /* SceneDelegate.swift */; };
 		ED7D4D48298167A200A30272 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D4D47298167A200A30272 /* LoginViewController.swift */; };
@@ -54,6 +56,8 @@
 		ED43629D2984316700CC128E /* TasksScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScreenView.swift; sourceTree = "<group>"; };
 		ED63A6E7298AC3EF0044716C /* KeyboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 		ED63A6EC298ACB0B0044716C /* JGProgressHUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDModel.swift; sourceTree = "<group>"; };
+		ED67D598298E89F000966D0B /* TasksViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewCell.swift; sourceTree = "<group>"; };
+		ED67D59A298EA56D00966D0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ED7D4D40298167A200A30272 /* TodoAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7D4D43298167A200A30272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7D4D45298167A200A30272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		ED67D59C298EA57200966D0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED67D59A298EA56D00966D0B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ED7D4D37298167A200A30272 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 		ED7D4D42298167A200A30272 /* TodoAppIOS */ = {
 			isa = PBXGroup;
 			children = (
+				ED67D59C298EA57200966D0B /* Model */,
 				ED4362982983F49A00CC128E /* Services */,
 				ED7D4D632981733D00A30272 /* View */,
 				ED7D4D622981733800A30272 /* ViewModel */,
@@ -147,8 +160,8 @@
 				ED7D4D47298167A200A30272 /* LoginViewController.swift */,
 				ED8A62332982C17200839C9E /* SignUpViewController.swift */,
 				ED43629929842EDA00CC128E /* MainTabBarViewController.swift */,
-				EDBD8644298C0FFE0054D8E7 /* PastTaskViewController.swift */,
 				EDBD8646298C10080054D8E7 /* TasksViewController.swift */,
+				EDBD8644298C0FFE0054D8E7 /* PastTaskViewController.swift */,
 				EDBD8648298C10190054D8E7 /* ProfileViewController.swift */,
 				ED2F0EAC298C6B3B00001E15 /* NewTaskViewController.swift */,
 			);
@@ -188,6 +201,7 @@
 				ED8A62372982C5F100839C9E /* SignUpScreenView.swift */,
 				ED43629D2984316700CC128E /* TasksScreenView.swift */,
 				ED2F0EB0298C6CAB00001E15 /* NewTaskScreenView.swift */,
+				ED67D598298E89F000966D0B /* TasksViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,11 +307,13 @@
 				ED2F0EB3298C748800001E15 /* InputTextView.swift in Sources */,
 				ED63A6E8298AC3EF0044716C /* KeyboardModel.swift in Sources */,
 				ED8A62322982A7EF00839C9E /* SignUpSignInButtonViewModel.swift in Sources */,
+				ED67D59B298EA56D00966D0B /* User.swift in Sources */,
 				ED2F0EB1298C6CAB00001E15 /* NewTaskScreenView.swift in Sources */,
 				ED2F0EAF298C6C5B00001E15 /* NewTaskVCViewModel.swift in Sources */,
 				EDBD8647298C10080054D8E7 /* TasksViewController.swift in Sources */,
 				EDBD8649298C10190054D8E7 /* ProfileViewController.swift in Sources */,
 				ED8A62382982C5F100839C9E /* SignUpScreenView.swift in Sources */,
+				ED67D599298E89F000966D0B /* TasksViewCell.swift in Sources */,
 				ED43629E2984316700CC128E /* TasksScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

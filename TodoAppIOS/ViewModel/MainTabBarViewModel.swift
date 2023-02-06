@@ -41,7 +41,7 @@ extension MainTabBarViewController {
         //MARK: - MainTabBar Configure
         
           let shape = CAShapeLayer()
-        let bezier = UIBezierPath(roundedRect: CGRect(x: 10, y: (self.tabBar.bounds.minY-14), width: (self.tabBar.bounds.width) - 20, height: (self.tabBar.bounds.height) + 28), cornerRadius: ((self.tabBar.bounds.height) + 28) / 3)
+        let bezier = UIBezierPath(roundedRect: CGRect(x: 10, y: (self.tabBar.bounds.minY-8), width: (self.tabBar.bounds.width) - 20, height: (self.tabBar.bounds.height) + 28), cornerRadius: ((self.tabBar.bounds.height) + 28) / 3)
         shape.path = bezier.cgPath
         shape.fillColor = UIColor.white.cgColor
         self.tabBar.itemWidth = (self.tabBar.bounds.width - 20) / 3
