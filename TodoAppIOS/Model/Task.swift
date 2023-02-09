@@ -8,14 +8,14 @@
 import UIKit
 import FirebaseFirestore
 
-struct Tasks {
+struct Task {
     
     let tasksID : String
     let text : String
     let timestamp : Timestamp
     
     init(data : [String : Any]) {
-        self.tasksID = data["tasksId"] as? String ?? ""
+        self.tasksID = data["taskId"] as? String ?? ""
         self.text = data["text"] as? String ?? ""
         self.timestamp = data["timestamp"] as? Timestamp ?? Timestamp(date: Date())
     }

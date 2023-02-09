@@ -129,7 +129,7 @@ extension UIViewController {
             "taskId" : taskId,
         ] as [String : Any]
         Firestore.firestore().collection("tasks").document(currentUid).collection("ongoing_tasks").document(taskId).setData(data)
-        NewTaskViewController.textView.text = ""
+     //   NewTaskViewController.textView.text = ""
         
         
         
@@ -146,20 +146,42 @@ extension UIViewController {
         
     }
     //MARK: - Fetch Tasks From Firebase
-    func fetchTasks(uid : String,completion : @escaping([Tasks])-> Void) {
+    func fetchTasks(completion : @escaping([Task])-> Void) {
         guard let uid = Auth.auth().currentUser?.uid else {return}
-        var tasks = [Tasks]()
+        var tasks = [Task]()
         Firestore.firestore().collection("tasks").document(uid).collection("ongoing_tasks").order(by: "timestamp").addSnapshotListener { snapshot, error in
             snapshot?.documentChanges.forEach({ value in
-                let data = value.document.data()
-                tasks.append(Tasks(data: data))
-                completion(tasks)
+                if value.type == .added {
+                    let data = value.document.data()
+                    tasks.append(Task(data: data))
+                    completion(tasks)
+                    print(tasks)
+                }
               
             })
         }
         
         
     }
+    
+    func deleteTask(task: Task) {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let data  = [
+            "text" : task.text,
+            "taskId" : task.tasksID,
+            "timestamp" : Timestamp(date : Date())
+        ] as [String : Any]
+        
+        Firestore.firestore().collection("tasks").document(uid).collection("completed_tasks").document(task.tasksID).setData(data) { error in
+            if let err = error {
+                print(err)
+                return
+            }else {
+                Firestore.firestore().collection("tasks").document(uid).collection("ongoing_tasks").document(task.tasksID).delete()
+            }
+        }
+    }
+    
     
     
     

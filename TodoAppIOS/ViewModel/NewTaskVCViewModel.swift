@@ -48,7 +48,7 @@ extension NewTaskViewController {
         
         NewTaskViewController.cancelButton.addTarget(self, action: #selector(cancelButtonClicked), for: UIControl.Event.touchUpInside)
         NewTaskViewController.addTaskButton.addTarget(self, action: #selector(addTaskButtonClicked), for: UIControl.Event.touchUpInside)
-        NewTaskViewController.addTaskButton.addTarget(self, action: #selector(dismissNewTaskScreen), for: UIControl.Event.touchUpInside)
+      //  NewTaskViewController.addTaskButton.addTarget(self, action: #selector(dismissNewTaskScreen), for: UIControl.Event.touchUpInside)
         
         NSLayoutConstraint.activate([
             

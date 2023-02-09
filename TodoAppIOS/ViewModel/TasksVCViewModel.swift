@@ -14,7 +14,7 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     static let  reuseIdentifier = "TasksCell"
     
-   static var tasks = [Tasks]()
+    static var tasks = [Task]()
     
   
     //MARK: - Helpers
@@ -31,10 +31,31 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksViewController.reuseIdentifier, for: indexPath) as! TasksViewCell
-        let task = TasksViewController.tasks[indexPath.row]
-       print(task)
+        cell.task = TasksViewController.tasks[indexPath.row]
+       
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksViewController.reuseIdentifier, for: indexPath) as! TasksViewCell
+        let alert = UIAlertController(title: "Choose Your Action", message: "", preferredStyle: UIAlertController.Style.alert)
+        let deleteButton = UIAlertAction(title: "Delete", style: UIAlertAction.Style.default) {  (UIAlertAction) in
+            TasksViewController.tasks.remove(at: indexPath.row)
+            collectionView.deleteItems(at: [indexPath])
+            guard let task = cell.task else {return}
+            self.deleteTask(task: task )
+        }
+        let editButton = UIAlertAction(title: "Edit", style: UIAlertAction.Style.default)
+        let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default)
+       
+        self.present(alert, animated: true)
+        alert.addAction(deleteButton)
+        alert.addAction(editButton)
+        alert.addAction(cancelButton)
+        
+       
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 180, height: 150)
@@ -43,6 +64,10 @@ extension TasksViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: 10, height: 10)
     }
+    
+   
+    
+
     
     
     //MARK: - Selectors

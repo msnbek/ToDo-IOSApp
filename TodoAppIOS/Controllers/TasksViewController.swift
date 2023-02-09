@@ -20,6 +20,8 @@ class TasksViewController: UIViewController {
     
     }
     
+   
+    
       // public var tasks = [Tasks]()
    
 //MARK: - Lifecycle
@@ -39,11 +41,9 @@ class TasksViewController: UIViewController {
     private func fetchTasks() {
         guard let uid = self.user?.uid else {return}
         print(uid)
-        fetchTasks(uid: uid) { tasks in
-            TasksViewController.tasks = tasks
+        fetchTasks { task in
+            TasksViewController.tasks = task
             TasksViewController.collectionView.reloadData()
-            
-           
         }
     } 
     private func configure() {

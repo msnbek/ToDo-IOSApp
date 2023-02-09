@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED1E595129919F3000AB2815 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E595029919F3000AB2815 /* Tasks.swift */; };
+		ED1E595129919F3000AB2815 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E595029919F3000AB2815 /* Task.swift */; };
 		ED2F0EAD298C6B3B00001E15 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F0EAC298C6B3B00001E15 /* NewTaskViewController.swift */; };
 		ED2F0EAF298C6C5B00001E15 /* NewTaskVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F0EAE298C6C5B00001E15 /* NewTaskVCViewModel.swift */; };
 		ED2F0EB1298C6CAB00001E15 /* NewTaskScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F0EB0298C6CAB00001E15 /* NewTaskScreenView.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED1E595029919F3000AB2815 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		ED1E595029919F3000AB2815 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		ED2F0EAC298C6B3B00001E15 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		ED2F0EAE298C6C5B00001E15 /* NewTaskVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVCViewModel.swift; sourceTree = "<group>"; };
 		ED2F0EB0298C6CAB00001E15 /* NewTaskScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskScreenView.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				ED67D59A298EA56D00966D0B /* User.swift */,
-				ED1E595029919F3000AB2815 /* Tasks.swift */,
+				ED1E595029919F3000AB2815 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				ED43629C2984314B00CC128E /* MainTabBarViewModel.swift in Sources */,
 				ED8A62362982C2DD00839C9E /* SignUpVCViewModel.swift in Sources */,
 				ED63A6ED298ACB0B0044716C /* JGProgressHUDModel.swift in Sources */,
-				ED1E595129919F3000AB2815 /* Tasks.swift in Sources */,
+				ED1E595129919F3000AB2815 /* Task.swift in Sources */,
 				ED7D4D6029816C8000A30272 /* LoginScreenView.swift in Sources */,
 				ED7D4D5D2981690400A30272 /* GradientColorModel.swift in Sources */,
 				ED2F0EAD298C6B3B00001E15 /* NewTaskViewController.swift in Sources */,

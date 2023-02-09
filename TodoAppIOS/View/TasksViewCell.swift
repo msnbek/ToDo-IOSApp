@@ -10,7 +10,11 @@ import UIKit
 class TasksViewCell: UICollectionViewCell {
     
     //MARK: - Properteis
-    let nameArray = [String]()
+   public var task : Task?{
+        didSet {
+            configure()
+        }
+    }
     
     private let checkButton : UIButton = {
        let button = UIButton()
@@ -44,6 +48,12 @@ class TasksViewCell: UICollectionViewCell {
 
 //MARK: - Helpers
 extension TasksViewCell {
+    
+    func configure() {
+        guard let task = self.task else {return}
+        textLabel.text = task.text
+        
+    }
 
     //MARK: - Selectors
     
@@ -71,6 +81,7 @@ extension TasksViewCell {
             }
              
         }
+        
    
         
     }
